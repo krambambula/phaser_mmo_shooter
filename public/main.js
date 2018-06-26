@@ -12,7 +12,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.load.image('unit', '/img/unit.png');
         this.load.image('bullet', '/img/bullet.png');
         this.load.image('killer', '/img/killers.png');
-        this.load.image('map', 'https://habrastorage.org/storage3/c06/e75/f5f/c06e75f5f7c9de0cdcbd6d802d042fc0.jpg');
+        this.load.image('map', 'https://i.pinimg.com/originals/54/0a/cf/540acf3d4a5bdb160713122765fcc45e.png');
     },
     create: function() {
         socket = io.connect(window.location.host);
@@ -22,7 +22,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.time.slowMotion = 0;
         bg = this.add.tileSprite(0, 0, gameData.map.size, gameData.map.size, 'map'); //спрайт карты
         this.world.setBounds(0, 0, gameData.map.size, gameData.map.size); //размеры карты
-        this.stage.backgroundColor = "#230d21"; //цвет фона на всякий случай
+        this.stage.backgroundColor = "#000"; //цвет фона на всякий случай
         socket.on("add_players", function(data) {
             data = JSON.parse(data);
             for (let playerId in data) {
@@ -99,15 +99,15 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
 });
 var gameActions = {
     addPlayer: function(playerId, x, y) {
-        var circle = odjectDrawing.generateCircle('green', 20);
-        player = game.add.sprite(x, y, circle);
+        var triangle = odjectDrawing.generateTriangle('white', 40);
+        player = game.add.sprite(x, y, triangle);
         game.physics.arcade.enable(player);
         player.smoothed = false;
         player.anchor.setTo(0.5, 0.5);
         player.scale.set(.8);
         player.body.collideWorldBounds = true;
         player.id = playerId;
-        var bullet = odjectDrawing.generateCircle('white', 5);
+        var bullet = odjectDrawing.generateCircle('white', 10);
         let weapon = game.add.weapon(30, bullet);
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletLifespan = 150;
