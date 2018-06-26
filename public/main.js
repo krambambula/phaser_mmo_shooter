@@ -21,7 +21,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.time.advancedTiming = true;
         this.time.desiredFps = 28;
         this.time.slowMotion = 0;
-        bg = this.add.tileSprite(0, 0, gameData.map.size, gameData.map.size, 'map'); //спрайт карты
+        bg = this.add.tileSprite(0, 0, gameData.map.size, gameData.map.size, 'background'); //спрайт карты
         this.world.setBounds(0, 0, gameData.map.size, gameData.map.size); //размеры карты
         this.stage.backgroundColor = "#230d21"; //цвет фона на всякий случай
         socket.on("add_players", function(data) {
