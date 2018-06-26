@@ -99,8 +99,8 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
 });
 var gameActions = {
     addPlayer: function(playerId, x, y) {
-        var triangle = odjectDrawing.generateTriangle('white', 40);
-        player = game.add.sprite(x, y, triangle);
+        var triangle = odjectDrawing.generateCircle('white', 40);
+        player = game.add.sprite(x, y, circle);
         game.physics.arcade.enable(player);
         player.smoothed = false;
         player.anchor.setTo(0.5, 0.5);
@@ -158,14 +158,14 @@ var gameActions = {
 
 
 var odjectDrawing = {
-    generateTriangle: function(color, size){
+    generateCircle: function(color, size){
         var diametr = size * 2
-        var triangle = game.add.bitmapData(diametr, diametr);
-        triangle.ctx.fillStyle = color;
-        triangle.ctx.beginPath();
-        triangle.ctx.arc(size, size, size, 0, Math.PI*2, true);
-        triangle.ctx.closePath();
-        triangle.ctx.fill();
+        var circle = game.add.bitmapData(diametr, diametr);
+        circle.ctx.fillStyle = color;
+        circle.ctx.beginPath();
+        circle.ctx.arc(size, size, size, 0, Math.PI*2, true);
+        circle.ctx.closePath();
+        circle.ctx.fill();
         return triangle;
     },
     generateRect: function(color, size) {
