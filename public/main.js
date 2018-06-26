@@ -12,8 +12,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.load.image('unit', '/img/unit.png');
         this.load.image('bullet', '/img/bullet.png');
         this.load.image('killer', '/img/killers.png');
-        this.load.image('map', 'https://i.pinimg.com/originals/54/0a/cf/540acf3d4a5bdb160713122765fcc45e.png');
-        this.load.image('background', 'https://habrastorage.org/storage3/c06/e75/f5f/c06e75f5f7c9de0cdcbd6d802d042fc0.jpg');
+        this.load.image('map', 'https://habrastorage.org/storage3/c06/e75/f5f/c06e75f5f7c9de0cdcbd6d802d042fc0.jpg');
     },
     create: function() {
         socket = io.connect(window.location.host);
@@ -21,7 +20,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.time.advancedTiming = true;
         this.time.desiredFps = 28;
         this.time.slowMotion = 0;
-        bg = this.add.tileSprite(0, 0, gameData.map.size, gameData.map.size, 'background'); //спрайт карты
+        bg = this.add.tileSprite(0, 0, gameData.map.size, gameData.map.size, 'map'); //спрайт карты
         this.world.setBounds(0, 0, gameData.map.size, gameData.map.size); //размеры карты
         this.stage.backgroundColor = "#230d21"; //цвет фона на всякий случай
         socket.on("add_players", function(data) {
