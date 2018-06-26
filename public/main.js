@@ -4,7 +4,7 @@ var player_speed = 666;
 var gameData = {
     style: { font: "80px Arial", fill: "white" },
     map: {
-        size: 1000
+        size: 1500
     }
 }
 var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'phaser-example', {
