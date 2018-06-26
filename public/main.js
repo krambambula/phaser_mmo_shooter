@@ -1,6 +1,6 @@
 var player, map, bullets, balls, ball, live, moveBullets, bg, keybord;
 var socket, players = {};
-var player_speed = 666;
+var player_speed = 888;
 var gameData = {
     style: { font: "80px Arial", fill: "white" },
     map: {
