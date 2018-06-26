@@ -158,15 +158,15 @@ var gameActions = {
 
 
 var odjectDrawing = {
-    generateCircle: function(color, size){
+    generateTriangle: function(color, size){
         var diametr = size * 2
-        var circle = game.add.bitmapData(diametr, diametr);
-        circle.ctx.fillStyle = color;
-        circle.ctx.beginPath();
-        circle.ctx.arc(size, size, size, 0, Math.PI*2, true);
-        circle.ctx.closePath();
-        circle.ctx.fill();
-        return circle;
+        var triangle = game.add.bitmapData(diametr, diametr);
+        triangle.ctx.fillStyle = color;
+        triangle.ctx.beginPath();
+        triangle.ctx.arc(size, size, size, 0, Math.PI*2, true);
+        triangle.ctx.closePath();
+        triangle.ctx.fill();
+        return triangle;
     },
     generateRect: function(color, size) {
 
