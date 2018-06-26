@@ -13,6 +13,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
         this.load.image('bullet', '/img/bullet.png');
         this.load.image('killer', '/img/killers.png');
         this.load.image('map', 'https://i.pinimg.com/originals/54/0a/cf/540acf3d4a5bdb160713122765fcc45e.png');
+        this.load.image('background', 'https://habrastorage.org/storage3/c06/e75/f5f/c06e75f5f7c9de0cdcbd6d802d042fc0.jpg');
     },
     create: function() {
         socket = io.connect(window.location.host);
