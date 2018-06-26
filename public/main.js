@@ -9,9 +9,9 @@ var gameData = {
 }
 var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'phaser-example', {
     preload: function() {
-        this.load.image('unit', '/img/unit.png');
-        this.load.image('bullet', '/img/bullet.png');
-        this.load.image('killer', '/img/killers.png');
+        this.load.image('unit', 'img/unit.png');
+        this.load.image('bullet', 'img/bullet.png');
+        this.load.image('killer', 'img/killers.png');
         this.load.image('map', 'https://i.pinimg.com/originals/54/0a/cf/540acf3d4a5bdb160713122765fcc45e.png');
     },
     create: function() {
@@ -99,7 +99,7 @@ var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS,
 });
 var gameActions = {
     addPlayer: function(playerId, x, y) {
-        var triangle = odjectDrawing.generateCircle('white', 40);
+        var circle = odjectDrawing.generateCircle('white', 15);
         player = game.add.sprite(x, y, circle);
         game.physics.arcade.enable(player);
         player.smoothed = false;
@@ -107,7 +107,7 @@ var gameActions = {
         player.scale.set(.8);
         player.body.collideWorldBounds = true;
         player.id = playerId;
-        var bullet = odjectDrawing.generateCircle('white', 10);
+        var bullet = odjectDrawing.generateCircle('white', 2);
         let weapon = game.add.weapon(30, bullet);
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletLifespan = 150;
@@ -166,7 +166,7 @@ var odjectDrawing = {
         circle.ctx.arc(size, size, size, 0, Math.PI*2, true);
         circle.ctx.closePath();
         circle.ctx.fill();
-        return triangle;
+        return circle;
     },
     generateRect: function(color, size) {
 
