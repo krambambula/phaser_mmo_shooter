@@ -107,7 +107,7 @@ var gameActions = {
         player.scale.set(.8);
         player.body.collideWorldBounds = true;
         player.id = playerId;
-        var bullet = odjectDrawing.generateCircle('white', 2);
+        var bullet = odjectDrawing.generateCircle('blue', 2);
         let weapon = game.add.weapon(30, bullet);
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletLifespan = 150;
