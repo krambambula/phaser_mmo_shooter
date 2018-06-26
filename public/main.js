@@ -4,7 +4,7 @@ var player_speed = 666;
 var gameData = {
     style: { font: "80px Arial", fill: "white" },
     map: {
-        size: 2500
+        size: 1000
     }
 }
 var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'phaser-example', {
@@ -107,7 +107,7 @@ var gameActions = {
         player.scale.set(.8);
         player.body.collideWorldBounds = true;
         player.id = playerId;
-        var bullet = odjectDrawing.generateCircle('blue', 2);
+        var bullet = odjectDrawing.generateCircle('orange', 2);
         let weapon = game.add.weapon(30, bullet);
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletLifespan = 150;
